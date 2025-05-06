@@ -961,10 +961,12 @@ spec:
                         x-kubernetes-list-type: atomic
                     type: object
                 type: object
-              capabilityTags:
+              capabilities:
                 additionalProperties:
                   type: boolean
                 type: object
+              cluster:
+                type: string
               description:
                 type: string
               tolerations:
@@ -1007,7 +1009,8 @@ spec:
                 type: array
             required:
             - affinity
-            - capabilityTags
+            - capabilities
+            - cluster
             - description
             - tolerations
             type: object

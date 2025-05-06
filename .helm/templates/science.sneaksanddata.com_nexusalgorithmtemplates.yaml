@@ -280,8 +280,6 @@ spec:
                   maximumRetries:
                     format: int32
                     type: integer
-                required:
-                - environmentVariables
                 type: object
               workgroupRef:
                 description: NexusAlgorithmWorkgroupRef contains a reference to the
@@ -377,7 +375,8 @@ spec:
             type: object
         required:
         - spec
-        - status
         type: object
     served: true
     storage: true
+    subresources:
+      status: {}

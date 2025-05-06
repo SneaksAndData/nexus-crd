@@ -1008,11 +1008,8 @@ spec:
                   type: object
                 type: array
             required:
-            - affinity
-            - capabilities
             - cluster
             - description
-            - tolerations
             type: object
           status:
             description: NexusAlgorithmWorkgroupStatus is the status for a NexusAlgorithmWorkgroup
@@ -1077,7 +1074,8 @@ spec:
             type: object
         required:
         - spec
-        - status
         type: object
     served: true
     storage: true
+    subresources:
+      status: {}

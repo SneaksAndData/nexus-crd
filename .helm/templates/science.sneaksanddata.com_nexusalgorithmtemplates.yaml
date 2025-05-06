@@ -283,31 +283,20 @@ spec:
                 required:
                 - environmentVariables
                 type: object
-              submissionBehaviour:
-                description: 'NexusAlgorithmSubmissionBehaviour defines submission
-                  behaviour: shards or single cluster, plus a workgroup'
+              workgroupRef:
+                description: NexusAlgorithmWorkgroupRef contains a reference to the
+                  workgroup
                 properties:
-                  shardClusters:
-                    items:
-                      type: string
-                    type: array
-                  workgroupRef:
-                    description: NexusAlgorithmWorkgroupRef contains a reference to
-                      the workgroup
-                    properties:
-                      group:
-                        type: string
-                      kind:
-                        type: string
-                      name:
-                        type: string
-                    required:
-                    - group
-                    - kind
-                    - name
-                    type: object
+                  group:
+                    type: string
+                  kind:
+                    type: string
+                  name:
+                    type: string
                 required:
-                - workgroupRef
+                - group
+                - kind
+                - name
                 type: object
             required:
             - command

@@ -133,12 +133,11 @@ spec:
                   configuration for each run
                 properties:
                   payloadSerializationMode:
+                    default: s3
                     type: string
                   payloadValidFor:
+                    default: 24h
                     type: string
-                required:
-                - payloadSerializationMode
-                - payloadValidFor
                 type: object
               runtimeEnvironment:
                 description: NexusAlgorithmRuntimeEnvironment defines environment
@@ -565,7 +564,6 @@ spec:
             required:
             - command
             - container
-            - payloadConfiguration
             type: object
           status:
             description: NexusAlgorithmStatus is the status for a NexusAlgorithmTemplate

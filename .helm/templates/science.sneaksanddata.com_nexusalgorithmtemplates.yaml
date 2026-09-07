@@ -59,6 +59,7 @@ spec:
                       type: string
                     type: object
                   defaultResourceQuota:
+                    default: "0.1"
                     type: string
                   limits:
                     additionalProperties:
@@ -85,8 +86,6 @@ spec:
                     type: object
                 required:
                 - cpuLimit
-                - defaultResourceQuota
-                - limits
                 - memoryLimit
                 type: object
               container:

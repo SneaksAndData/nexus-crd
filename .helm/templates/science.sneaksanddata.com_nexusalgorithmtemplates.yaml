@@ -59,6 +59,7 @@ spec:
                       type: string
                     type: object
                   defaultResourceQuota:
+                    default: "0.1"
                     type: string
                   limits:
                     additionalProperties:
@@ -85,8 +86,6 @@ spec:
                     type: object
                 required:
                 - cpuLimit
-                - defaultResourceQuota
-                - limits
                 - memoryLimit
                 type: object
               container:
@@ -133,12 +132,11 @@ spec:
                   configuration for each run
                 properties:
                   payloadSerializationMode:
+                    default: s3
                     type: string
                   payloadValidFor:
+                    default: 24h
                     type: string
-                required:
-                - payloadSerializationMode
-                - payloadValidFor
                 type: object
               runtimeEnvironment:
                 description: NexusAlgorithmRuntimeEnvironment defines environment
@@ -565,7 +563,6 @@ spec:
             required:
             - command
             - container
-            - payloadConfiguration
             type: object
           status:
             description: NexusAlgorithmStatus is the status for a NexusAlgorithmTemplate
